@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+
+
+
+<a href="http://127.0.0.1:8000/add/"><button type="submit">Add</button></a>
+<table style="width:100%">
+    
+    
+  <tr>
+    <th>S.no</th>
+    <th>Name</th> 
+    <th>Degree</th>
+    <th>Father's Name</th>
+    <th>ADD/DELETE</th>
+    
+  </tr>
+  {% for d in doctor %}
+
+  <tr>
+    <td>1</td>
+    <td>{{d.name}}</td>
+    <td>{{d.degree}}</td>
+    <td>{{d.fathers_name}}</td>
+    <td>
+        <a href="/{{d.id}}/edit/"><button type="submit">Edit</button></a>
+        <a href="/{{d.id}}/delete/"><button type="submit">Delete</button></a>
+    </td>
+  </tr>
+  {% endfor %}
+  
+</table>
+
+</body>
+</html>
